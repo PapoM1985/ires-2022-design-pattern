@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example3.samsungfactory;
 
-import com.icoderman.creational.abstractfactory.example3.Phone;
+
+import it.euris.ires.examples.creational.abstractfactory.example3.Phone;
 
 public class GalaxyS extends Phone {
 

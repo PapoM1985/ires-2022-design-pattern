@@ -15,7 +15,7 @@ public class Main {
 
 
         /* TODO
-        Aggiungere la possibilit‡ di creare torte con una scritta (stesso prezzo),
+        Aggiungere la possibilit√† di creare torte con una scritta (stesso prezzo),
         con disegno (prezzo +2) a strati (+5), alla fragola (prezzo * 2)
          */
     }

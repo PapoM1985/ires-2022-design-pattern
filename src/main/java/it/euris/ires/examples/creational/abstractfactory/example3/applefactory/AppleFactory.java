@@ -1,8 +1,9 @@
 package it.euris.ires.examples.creational.abstractfactory.example3.applefactory;
 
-import com.icoderman.creational.abstractfactory.example3.Laptop;
-import com.icoderman.creational.abstractfactory.example3.Phone;
-import com.icoderman.creational.abstractfactory.example3.TechFactory;
+
+import it.euris.ires.examples.creational.abstractfactory.example3.Laptop;
+import it.euris.ires.examples.creational.abstractfactory.example3.Phone;
+import it.euris.ires.examples.creational.abstractfactory.example3.TechFactory;
 
 public class AppleFactory implements TechFactory {
 

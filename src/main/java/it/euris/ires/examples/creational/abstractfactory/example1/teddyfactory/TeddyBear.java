@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example1.teddyfactory;
 
-import com.icoderman.creational.abstractfactory.example1.Bear;
+
+import it.euris.ires.examples.creational.abstractfactory.example1.Bear;
 
 public class TeddyBear extends Bear {
 

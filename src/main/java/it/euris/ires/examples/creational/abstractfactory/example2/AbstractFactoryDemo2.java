@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example2;
 
-import com.icoderman.creational.abstractfactory.example2.factory1.Factory1;
+
+import it.euris.ires.examples.creational.abstractfactory.example2.factory1.Factory1;
 
 public class AbstractFactoryDemo2 {
 

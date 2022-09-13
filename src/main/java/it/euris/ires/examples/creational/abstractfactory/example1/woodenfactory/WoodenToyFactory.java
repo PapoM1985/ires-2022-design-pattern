@@ -1,8 +1,9 @@
 package it.euris.ires.examples.creational.abstractfactory.example1.woodenfactory;
 
-import com.icoderman.creational.abstractfactory.example1.Bear;
-import com.icoderman.creational.abstractfactory.example1.Cat;
-import com.icoderman.creational.abstractfactory.example1.ToyFactory;
+
+import it.euris.ires.examples.creational.abstractfactory.example1.Bear;
+import it.euris.ires.examples.creational.abstractfactory.example1.Cat;
+import it.euris.ires.examples.creational.abstractfactory.example1.ToyFactory;
 
 public class WoodenToyFactory implements ToyFactory {
 

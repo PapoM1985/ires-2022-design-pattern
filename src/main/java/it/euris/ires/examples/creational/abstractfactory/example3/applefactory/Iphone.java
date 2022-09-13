@@ -1,7 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example3.applefactory;
 
 
-import com.icoderman.creational.abstractfactory.example3.Phone;
+import it.euris.ires.examples.creational.abstractfactory.example3.Phone;
 
 public class Iphone extends Phone {
 

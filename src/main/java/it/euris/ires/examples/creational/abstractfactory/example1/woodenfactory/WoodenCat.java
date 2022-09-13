@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example1.woodenfactory;
 
-import com.icoderman.creational.abstractfactory.example1.Cat;
+
+import it.euris.ires.examples.creational.abstractfactory.example1.Cat;
 
 public class WoodenCat extends Cat {
 

@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example1;
 
-import com.icoderman.creational.abstractfactory.example1.teddyfactory.TeddyToyFactory;
+
+import it.euris.ires.examples.creational.abstractfactory.example1.teddyfactory.TeddyToyFactory;
 
 public class AbstractFactoryDemo1 {
 

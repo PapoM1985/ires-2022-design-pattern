@@ -1,6 +1,7 @@
 package it.euris.ires.examples.creational.abstractfactory.example2.factory2;
 
-import com.icoderman.creational.abstractfactory.example2.ProductB;
+
+import it.euris.ires.examples.creational.abstractfactory.example2.ProductB;
 
 public class ProductBF2 extends ProductB {
 
