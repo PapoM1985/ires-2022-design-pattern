@@ -5,30 +5,47 @@ import java.util.Deque;
 
 public class VendingMachine {
 
-    private static Integer THE_PRICE = 10;
-    private Deque<Drink> drinks = new ArrayDeque<>();
+  private static Integer THE_PRICE = 10;
+  private Deque<Drink> drinks;
+  private Integer amountInserted;
+  private boolean drinkSelected;
 
-    public boolean insertMoney(Integer amount) {
-        //TODO deve verificare che l'ammontare sia sufficiente, altrimenti risulta false
-        return true;
-    }
+  public VendingMachine() {
+    drinks = new ArrayDeque<>();
+    amountInserted = 0;
+  }
 
-    public boolean selectDrink() {
-        //TODO se prima non ha inserito abbastanza soldi deve dare false
-        //TODO deve verificare che ci siano ancora drink disponibili, altrimenti false
-        return true;
-    }
+  public void insertMoney(Integer amount) {
+    amountInserted += amount;
+  }
 
-    public Drink confirm() {
-        //TODO non deve essere possibile chiamarlo prima della selezione
-        if (drinks.isEmpty()) {
-            //TODO deve tornare prima della selezione ma dopo il pagamento
-        }
-        //TODO ritorna la bibita e si riporta a prima del pagamento
-        return drinks.pop();
-    }
+  private void selectDrink() {
+    drinkSelected = true;
+  }
 
-    public void addDrink(Drink drink) {
-        drinks.add(drink);
+  private void unSelectDrink() {
+    drinkSelected = false;
+  }
+
+  public void confirm() {
+    if (amountInserted == 0) {
+      System.out.println("Please insert " + THE_PRICE + "coins");
+    } else if (amountInserted < THE_PRICE) {
+      System.out.println("Not enough coins: insert " + (THE_PRICE - amountInserted) + " more");
+    } else if (!drinkSelected) {
+      selectDrink();
+    } else if (drinks.isEmpty()) {
+      System.out.println("Drinks sold out! Please refill and select again");
+      unSelectDrink();
+    } else {
+      System.out.println("Here is you drink!");
+      unSelectDrink();
+      drinks.remove();
+      amountInserted = 0;
     }
+  }
+
+  public void addDrink(Drink drink) {
+    drinks.add(drink);
+  }
 }

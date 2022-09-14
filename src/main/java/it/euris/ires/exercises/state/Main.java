@@ -6,14 +6,14 @@ public class Main {
         VendingMachine machine = new VendingMachine();
 
         machine.insertMoney(5);
-        machine.selectDrink(); // Messaggio di pagamento non sufficiente
+        machine.confirm(); // Messaggio di pagamento non sufficiente
 
         machine.insertMoney(10);
-        machine.selectDrink();
+        machine.confirm();
         machine.confirm(); // Messaggio di drink esauriti
 
         machine.addDrink(new Drink());
-        machine.selectDrink(); //Non pago di nuovo
+        machine.confirm(); //Non pago di nuovo
         machine.confirm(); // il risultato deve essere il drink inserito
     }
 
