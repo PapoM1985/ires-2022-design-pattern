@@ -7,7 +7,6 @@ public class Fan {
     private State fanHighState;
 
     private State state;
-    private State highLowState;
 
     public Fan() {
         fanOffState = new FanOffState(this);

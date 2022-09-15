@@ -5,47 +5,62 @@ import java.util.Deque;
 
 public class VendingMachine {
 
-  private static Integer THE_PRICE = 10;
-  private Deque<Drink> drinks;
-  private Integer amountInserted;
-  private boolean drinkSelected;
+    private Integer price;
+    private Deque<Drink> drinks;
+    private Integer amountInserted;
+    private boolean drinkSelected;
 
-  public VendingMachine() {
-    drinks = new ArrayDeque<>();
-    amountInserted = 0;
-  }
+    private MachineState state;
 
-  public void insertMoney(Integer amount) {
-    amountInserted += amount;
-  }
-
-  private void selectDrink() {
-    drinkSelected = true;
-  }
-
-  private void unSelectDrink() {
-    drinkSelected = false;
-  }
-
-  public void confirm() {
-    if (amountInserted == 0) {
-      System.out.println("Please insert " + THE_PRICE + "coins");
-    } else if (amountInserted < THE_PRICE) {
-      System.out.println("Not enough coins: insert " + (THE_PRICE - amountInserted) + " more");
-    } else if (!drinkSelected) {
-      selectDrink();
-    } else if (drinks.isEmpty()) {
-      System.out.println("Drinks sold out! Please refill and select again");
-      unSelectDrink();
-    } else {
-      System.out.println("Here is you drink!");
-      unSelectDrink();
-      drinks.remove();
-      amountInserted = 0;
+    public VendingMachine() {
+        drinks = new ArrayDeque<>();
+        amountInserted = 0;
+        price = 10;
+        state = new NotPayedState(this);
     }
-  }
 
-  public void addDrink(Drink drink) {
-    drinks.add(drink);
-  }
+    public void insertMoney(Integer amount) {
+        amountInserted += amount;
+    }
+
+    private void selectDrink() {
+        drinkSelected = true;
+    }
+
+    private void unSelectDrink() {
+        drinkSelected = false;
+    }
+
+    public void confirm() {
+        this.state.onConfirm();
+    }
+
+    public void addDrink(Drink drink) {
+        drinks.add(drink);
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public Deque<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public Integer getAmountInserted() {
+        return amountInserted;
+    }
+
+
+    public boolean isDrinkSelected() {
+        return drinkSelected;
+    }
+
+    public MachineState getState() {
+        return state;
+    }
+
+    public void setState(MachineState state) {
+        this.state = state;
+    }
 }
